@@ -1,28 +1,27 @@
 import Exponent from 'exponent';
 import React from 'react';
 import {
-  StyleSheet,
-  Text,
-  View,
+    StyleSheet,
+    Text,
+    View,
 } from 'react-native';
+import {Container, Content, Header, Title} from 'native-base';
+import WeatherContainer from './app/components/weather/container';
 
 class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up main.js to start working on your app!</Text>
-      </View>
-    );
-  }
-}
+    render() {
+        return (
+            <Container>
+                <Header style={{backgroundColor: 'red'}}>
+                    <Title>Weather</Title>
+                </Header>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+                <Content>
+                    <WeatherContainer/>
+                </Content>
+            </Container>
+        );
+    }
+}
 
 Exponent.registerRootComponent(App);
